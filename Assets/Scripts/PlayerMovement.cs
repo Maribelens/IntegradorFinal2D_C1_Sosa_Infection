@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
 
@@ -30,4 +30,27 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 
+
+//using UnityEngine;
+
+//public class Bullet : MonoBehaviour
+//{
+//    public float speed = 10f;
+//    public float lifeTime = 2f; // tiempo antes de destruir la bala
+
+//    private Rigidbody2D rb;
+
+//    void Start()
+//    {
+//        rb = GetComponent<Rigidbody2D>();
+//        rb.velocity = transform.up * speed; // mueve la bala hacia adelante
+//        Destroy(gameObject, lifeTime); // destruye la bala después de cierto tiempo
+//    }
+
+//    void OnCollisionEnter2D(Collision2D collision)
+//    {
+//        // Aquí puedes manejar daño o efectos
+//        Destroy(gameObject); // destruye la bala al chocar
+//    }
+//}
 
