@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
@@ -23,6 +21,5 @@ public class PlayerShoot : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        //bulletPrefab.GetComponent<Rigidbody2D>().AddForce (firePoint.up, ForceMode2D.Impulse);
     }
 }

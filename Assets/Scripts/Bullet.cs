@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -18,7 +16,6 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         rb.velocity = transform.up * speed; // mueve la bala hacia adelante
-        //transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 
     //void OnCollisionEnter2D(Collision2D collision)
