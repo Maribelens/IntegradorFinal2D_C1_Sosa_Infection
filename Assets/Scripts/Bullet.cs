@@ -12,12 +12,12 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * speed; // mueve la bala hacia adelante
         Destroy(gameObject, lifeTime); // destruye la bala después de cierto tiempo
     }
 
     private void Update()
     {
+        rb.velocity = transform.up * speed; // mueve la bala hacia adelante
         //transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 

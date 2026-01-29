@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public GameObject bulletPrefab; // asigna el prefab de la bala
-    public Transform firePoint;     // punto desde donde se dispara
-    public float fireRate = 0.2f;   // intervalo entre disparos
+    [SerializeField] Transform firePoint;     // punto desde donde se dispara
+    [SerializeField] GameObject bulletPrefab; // asigna el prefab de la bala
+    [SerializeField] float fireRate = 0.2f;   // intervalo entre disparos
 
     private float nextFireTime = 0f;
 
@@ -23,6 +23,6 @@ public class PlayerShoot : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletPrefab.GetComponent<Rigidbody2D>().AddForce (firePoint.up, ForceMode2D.Impulse);
+        //bulletPrefab.GetComponent<Rigidbody2D>().AddForce (firePoint.up, ForceMode2D.Impulse);
     }
 }
