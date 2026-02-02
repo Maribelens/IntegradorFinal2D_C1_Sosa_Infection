@@ -1,5 +1,6 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
+using System.Collections;
+//using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,22 +9,26 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     private Vector2 movement;
 
     [Header("Damage")]
-    [SerializeField] private int damage = 20;
+    public int damage = 20;
     private float damageCooldown = 1f;
     private float lastDamageTime;
-    public SpriteRenderer spriteRen;
+    private Color originalColor;
 
     private void Awake()
     {
+        playerHealth.onTakeDamage += OnTakeDamage;
         playerHealth.onDie += OnDie;
     }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     private void Update()
@@ -51,9 +56,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTakeDamage()
+    {
+        StartCoroutine(CambiarColorTemporal(Color.red));
+    }
+
+    private IEnumerator CambiarColorTemporal(Color nuevoColor)
+    {
+        spriteRenderer.color = nuevoColor; 
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.color = originalColor;
+    }
+
     private void OnDie()
     {
-        spriteRen.color = Random.ColorHSV();
+        Destroy(gameObject);
+        //spriteRenderer.color = Random.ColorHSV();
     }
 
 }

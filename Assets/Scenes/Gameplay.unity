@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 433636416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.12, z: 0}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -325,7 +325,6 @@ MonoBehaviour:
   playerHealth: {fileID: 1003418846}
   moveSpeed: 5
   damage: 20
-  spriteRen: {fileID: 1003418842}
 --- !u!70 &1003418840
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

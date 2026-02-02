@@ -17,10 +17,10 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = transform.up * speed; // mueve la bala hacia adelante
     }
-
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    // Aquí puedes manejar daño o efectos
-    //    Destroy(gameObject); // destruye la bala al chocar
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Aquí puedes manejar daño o efectos
+        if(collision.collider.CompareTag("Enemy"))
+        Destroy(gameObject); // destruye la bala al chocar
+    }
 }
