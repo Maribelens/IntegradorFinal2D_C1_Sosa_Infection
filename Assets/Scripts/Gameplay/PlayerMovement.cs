@@ -12,6 +12,14 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
 
+    [Header("Dash Settings")]
+    public float dashSpeed = 20f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 1f;
+
+    private bool isDashing = false;
+    private bool canDash = true;
+
     [Header("Damage")]
     public int damage = 20;
     private float damageCooldown = 1f;
@@ -33,19 +41,50 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // 1. Capturar input
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        if (!isDashing)
+        {
+            // 1. Capturar input
+            float moveX = Input.GetAxis("Horizontal");
+            float moveY = Input.GetAxis("Vertical");
 
-        // 2. Normalizar vector
-        movement = new Vector2(moveX, moveY).normalized;
+            // 2. Normalizar vector
+            movement = new Vector2(moveX, moveY).normalized;
+        }
+
+
+        // 2. Input de dash
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
+        {
+            if (movement != Vector2.zero) // dash solo si hay dirección
+                StartCoroutine(Dash(movement));
+        }
+
     }
 
     private void FixedUpdate()
     {
-        // 3. Aplicar movimiento con Rigidbody2D
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (!isDashing)
+            // 3. Aplicar movimiento con Rigidbody2D
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    private IEnumerator Dash(Vector2 direction)
+    {
+        canDash = false;
+        isDashing = true;
+
+        float startTime = Time.time;
+        while (Time.time < startTime + dashDuration)
+        {
+            rb.MovePosition(rb.position + direction * dashSpeed * Time.fixedDeltaTime);
+            yield return null;
+        }
+
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -324,6 +324,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1003418846}
   moveSpeed: 5
+  dashSpeed: 20
+  dashDuration: 0.2
+  dashCooldown: 1
   damage: 20
 --- !u!70 &1003418840
 CapsuleCollider2D:
