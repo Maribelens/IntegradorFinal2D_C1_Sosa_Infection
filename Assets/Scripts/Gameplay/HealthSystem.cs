@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class HealthSystem : MonoBehaviour, IDamageable
 {
     // Eventos de estado de vida e invulnerabilidad
     public event Action<int, int> onLifeUpdated;    // (vida actual, vida máxima)
@@ -16,15 +16,15 @@ public class PlayerHealth : MonoBehaviour
     {
         currentLife = maxLife;
     }
-    // Start is called before the first frame update
+
     private void Start()
     {
         onLifeUpdated?.Invoke(currentLife, maxLife);
     }
 
-    public void DoDamage(int damage)
+    public void TakeDamage(int amount)
     {
-        if (damage < 0)
+        if (amount < 0)
         {
             Debug.Log("Se cura en la funcion de daño");
             return;
@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (isInvulnerable) return;
 
-        currentLife -= damage;
+        currentLife -= amount;
 
         if (currentLife <= 0)
         {

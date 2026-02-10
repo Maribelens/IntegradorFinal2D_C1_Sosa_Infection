@@ -1,11 +1,10 @@
 using UnityEngine;
 using System.Collections;
-//using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Scripts")]
-    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private HealthSystem healthSystem;
 
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
@@ -28,8 +27,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        playerHealth.onTakeDamage += OnTakeDamage;
-        playerHealth.onDie += OnDie;
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.onTakeDamage += OnTakeDamage;
+        healthSystem.onDie += OnDie;
     }
 
     private void Start()
@@ -85,13 +85,13 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy") && Time.time > lastDamageTime + damageCooldown)
+        IDamageable damageable = collision.collider.GetComponent<IDamageable>();
+        if (damageable != null && Time.time > lastDamageTime + damageCooldown)
         {
-            playerHealth.DoDamage(damage);
-            lastDamageTime = Time.time;
+              damageable.TakeDamage(damage);
+              lastDamageTime = Time.time;
         }
     }
 
@@ -110,7 +110,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnDie()
     {
         Destroy(gameObject);
-        //spriteRenderer.color = Random.ColorHSV();
     }
 
 }

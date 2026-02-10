@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class UiLife : MonoBehaviour
 {
     [Header("LifeBar Panel")]
-    [SerializeField] private PlayerHealth target;
+    [SerializeField] private HealthSystem target;
     [SerializeField] private Image lifeBar;
 
     private void Awake()
