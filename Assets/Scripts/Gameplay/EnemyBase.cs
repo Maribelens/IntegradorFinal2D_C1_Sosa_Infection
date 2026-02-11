@@ -1,26 +1,44 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyBase : MonoBehaviour, IDamageable
+public abstract class EnemyBase : MonoBehaviour
 {
-    public int maxLife = 50;
-    private int currentLife;
+    [Header("Scripts")]
+    [SerializeField] private HealthSystem healthSystem;
+
+    [Header("Enemy Stats")]
+    public int life = 50;
+    public int damage = 10;
+    public float speed = 2f;
+
+    [Header ("References")]
+    protected Transform player; //referencia al jugador
+
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
     protected virtual void Awake()
     {
-        currentLife = maxLife;
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.onTakeDamage += OnTakeDamage;
+        healthSystem.onDie += OnDie;
+
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
     }
 
-    public void TakeDamage(int amount)
+    protected virtual void Start()
     {
-        currentLife -= amount;
-        if (currentLife <= 0)
-            Die();
-        else
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    public void OnTakeDamage()
+    {
+        //life -= amount;
+        //if (life <= 0)
+        //    OnDie();
+        //else
             StartCoroutine(FlashDamage());
     }
 
@@ -31,7 +49,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
         spriteRenderer.color = originalColor;
     }
 
-    private void Die()
+    protected virtual void OnDie()
     {
         Destroy(gameObject);
     }

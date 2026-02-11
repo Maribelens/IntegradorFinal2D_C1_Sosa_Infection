@@ -20,9 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
 
     [Header("Damage")]
-    public int damage = 20;
-    private float damageCooldown = 1f;
-    private float lastDamageTime;
+    //public int damage = 20;
     private Color originalColor;
 
     private void Awake()
@@ -83,16 +81,6 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        IDamageable damageable = collision.collider.GetComponent<IDamageable>();
-        if (damageable != null && Time.time > lastDamageTime + damageCooldown)
-        {
-              damageable.TakeDamage(damage);
-              lastDamageTime = Time.time;
-        }
     }
 
     private void OnTakeDamage()
