@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public abstract class EnemyBase : MonoBehaviour
 {
+    public event Action<EnemyBase> OnEnemyDeath;
+
     [Header("Scripts")]
     [SerializeField] private HealthSystem healthSystem;
 
@@ -23,7 +26,6 @@ public abstract class EnemyBase : MonoBehaviour
         healthSystem.onTakeDamage += OnTakeDamage;
         healthSystem.onDie += OnDie;
 
-
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
     }
@@ -35,11 +37,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     public void OnTakeDamage()
     {
-        //life -= amount;
-        //if (life <= 0)
-        //    OnDie();
-        //else
-            StartCoroutine(FlashDamage());
+        StartCoroutine(FlashDamage());
     }
 
     private IEnumerator FlashDamage()
@@ -51,6 +49,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void OnDie()
     {
+        OnEnemyDeath?.Invoke(this);
         Destroy(gameObject);
     }
 }
