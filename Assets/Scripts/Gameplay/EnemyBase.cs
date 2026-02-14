@@ -10,7 +10,7 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] private HealthSystem healthSystem;
 
     [Header("Enemy Stats")]
-    public int life = 50;
+    //public int life = 50;
     public int damage = 10;
     public float speed = 2f;
 

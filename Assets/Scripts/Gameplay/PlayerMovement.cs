@@ -85,12 +85,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTakeDamage()
     {
-        StartCoroutine(CambiarColorTemporal(Color.red));
+        StartCoroutine(ChangeTemporaryColor(Color.red));
     }
 
-    private IEnumerator CambiarColorTemporal(Color nuevoColor)
+    private IEnumerator ChangeTemporaryColor(Color newColor)
     {
-        spriteRenderer.color = nuevoColor; 
+        spriteRenderer.color = newColor; 
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = originalColor;
     }
