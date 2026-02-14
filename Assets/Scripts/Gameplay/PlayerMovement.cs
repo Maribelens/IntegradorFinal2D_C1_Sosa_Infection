@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Scripts")]
     [SerializeField] private HealthSystem healthSystem;
+    [SerializeField] private GameManager gameManager;
 
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
@@ -97,7 +98,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDie()
     {
-        Destroy(gameObject);
+        gameManager.GameOver();
+        gameObject.SetActive(false);
+        Debug.Log("PLAYER MURIÓ");
     }
 
 }

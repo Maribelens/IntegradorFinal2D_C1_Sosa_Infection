@@ -5,6 +5,7 @@ public class CriticalObjective : MonoBehaviour
 {
     [Header("Scripts")]
     [SerializeField] private HealthSystem healthSystem;
+    [SerializeField] private GameManager gameManager;
 
     //public int generatorHealth = 100;
     private SpriteRenderer spriteRenderer;
@@ -37,8 +38,8 @@ public class CriticalObjective : MonoBehaviour
 
     private void OnDie()
     {
+        gameManager.GameOver();
         gameObject.SetActive(false);
-        //Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

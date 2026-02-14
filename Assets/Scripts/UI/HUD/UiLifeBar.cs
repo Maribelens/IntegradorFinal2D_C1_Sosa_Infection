@@ -1,7 +1,7 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
-public class UiLife : MonoBehaviour
+public class UiLifeBar : MonoBehaviour
 {
     [Header("LifeBar Panel")]
     [SerializeField] private HealthSystem target;
@@ -9,7 +9,7 @@ public class UiLife : MonoBehaviour
 
     private void Awake()
     {
-        // Suscripción a eventos del sistema de salud
+        // Suscripciï¿½n a eventos del sistema de salud
         target.onLifeUpdated += HealthSystem_onLifeUpdated;
         target.onDie += HealthSystem_onDie;
     }
@@ -23,14 +23,14 @@ public class UiLife : MonoBehaviour
 
     public void HealthSystem_onLifeUpdated(int current, int max)
     {
-        // Actualiza la barra de vida según el porcentaje restante
+        // Actualiza la barra de vida segï¿½n el porcentaje restante
         float lerp = current / (float)max;
         lifeBar.fillAmount = lerp;
     }
 
     private void HealthSystem_onDie()
     {
-        // Vacía la barra al morir el jugador
+        // Vacï¿½a la barra al morir el jugador
         lifeBar.fillAmount = 0;
     }
 }

@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public enum DamageOwner
+    {
+        Player,
+        Enemy
+    }
+
+    [SerializeField] private DamageOwner owner;
+    //[SerializeField] private int damage = 10;
+
     public float speed = 10f;
     public float lifeTime = 2f; // tiempo antes de destruir la bala
     private Rigidbody2D rb;
@@ -21,7 +30,8 @@ public class Bullet : MonoBehaviour
     {
         // Aquí puedes manejar daño o efectos
         IDamageable damageable = collision.collider.GetComponent<IDamageable>();
-        if (damageable != null)
+        if (damageable == null) return;
+        if (owner == DamageOwner.Player && collision.collider.CompareTag("Enemy"))
         {
             damageable.TakeDamage(10);
         }
