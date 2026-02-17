@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private PlayerDataSo playerData;
+    private int playerCurrentDamage;
     public enum DamageOwner
     {
         Player,
@@ -15,7 +17,12 @@ public class Bullet : MonoBehaviour
     public float lifeTime = 2f; // tiempo antes de destruir la bala
     private Rigidbody2D rb;
 
-    void Start()
+    private void Awake()
+    {
+        playerCurrentDamage = playerData.baseDamage;
+    }
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifeTime); // destruye la bala después de cierto tiempo
@@ -33,7 +40,7 @@ public class Bullet : MonoBehaviour
         if (damageable == null) return;
         if (owner == DamageOwner.Player && collision.collider.CompareTag("Enemy"))
         {
-            damageable.TakeDamage(10);
+            damageable.TakeDamage(playerCurrentDamage);
         }
         Destroy(gameObject); // destruye la bala al chocar
     }

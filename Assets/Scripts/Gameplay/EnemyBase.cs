@@ -6,17 +6,18 @@ public abstract class EnemyBase : MonoBehaviour
 {
     public event Action<EnemyBase> OnEnemyDeath;
 
+    [Header("Enemy Data")]
+    [SerializeField] protected EnemyDataSo enemyData;     //Se asigna en el inspector
+
     [Header("Scripts")]
     [SerializeField] protected HealthSystem healthSystem;
     [SerializeField] protected GameManager gameManager;
 
-    [Header("Enemy Stats")]
-    //public int life = 50;
-    public int damage = 10;
-    [HideInInspector] public float baseSpeed = 2f;
+    protected int currentDamage;
+    [HideInInspector] public float baseSpeed;
     [SerializeField] private float maxSpeed = 5f;
     //[SerializeField] private float speedMultiplier = 0.05f;
-    private float currentSpeed;
+    protected float currentSpeed;
 
     [Header ("References")]
     protected Transform player; //referencia al jugador
@@ -30,8 +31,17 @@ public abstract class EnemyBase : MonoBehaviour
     }
     protected virtual void Awake()
     {
+        currentDamage = enemyData.baseDamage;
+        currentSpeed = enemyData.baseSpeed;
+
         gameManager = GetComponent<GameManager>();
         healthSystem = GetComponent<HealthSystem>();
+
+        //Configurar la vida maxima del HeealthSystem segun el SO
+        healthSystem.Initialize(enemyData.baseLife);
+        //Debug.Log("EnemyBase Awake ejecutado", gameObject);
+
+        //healthSystem.maxLife = enemyData.baseLife;
 
         healthSystem.onTakeDamage += OnTakeDamage;
         healthSystem.onDie += OnDie;
@@ -48,6 +58,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Start()
     {
+        //healthSystem = GetComponent<HealthSystem>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         HandleInfectionChanged(gameManager.Infection01);
     }

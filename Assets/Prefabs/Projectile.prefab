@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d312a2561a19fd44ea91bf82a72d6940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 85d79ce7cdb1d8743bbbb72cedd7783b, type: 2}
   owner: 0
   speed: 10
   lifeTime: 2

@@ -3,11 +3,15 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Player Data")]
+    [SerializeField] protected PlayerDataSo playerData;     //Se asigna en el inspector
+
     [Header("Scripts")]
     [SerializeField] private HealthSystem healthSystem;
     [SerializeField] private GameManager gameManager;
 
-    public float moveSpeed = 5f;
+    private float currentSpeed;
+    //public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
@@ -21,12 +25,15 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
 
     [Header("Damage")]
+    private int currentDamage;
     //public int damage = 20;
     private Color originalColor;
-
     private void Awake()
     {
+        currentSpeed = playerData.baseSpeed;
         healthSystem = GetComponent<HealthSystem>();
+        //Configurar la vida maxima del HeealthSystem segun el SO
+        healthSystem.Initialize(playerData.baseLife);
         healthSystem.onTakeDamage += OnTakeDamage;
         healthSystem.onDie += OnDie;
     }
@@ -64,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing)
             // 3. Aplicar movimiento con Rigidbody2D
-            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
     }
 
     private IEnumerator Dash(Vector2 direction)
@@ -86,12 +93,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTakeDamage()
     {
-        StartCoroutine(ChangeTemporaryColor(Color.red));
+        StartCoroutine(FlashDamage(Color.red));
     }
 
-    private IEnumerator ChangeTemporaryColor(Color newColor)
+    private IEnumerator FlashDamage(Color newColor)
     {
-        spriteRenderer.color = newColor; 
+        spriteRenderer.color = newColor;
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = originalColor;
     }

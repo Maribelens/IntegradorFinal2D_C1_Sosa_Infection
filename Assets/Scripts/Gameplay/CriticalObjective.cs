@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class CriticalObjective : MonoBehaviour
 {
+    [Header("Objetive Data")]
+    [SerializeField] ObjectiveDataSo objectiveData;
+
     [Header("Scripts")]
     [SerializeField] private HealthSystem healthSystem;
     [SerializeField] private GameManager gameManager;
@@ -14,6 +17,7 @@ public class CriticalObjective : MonoBehaviour
     private void Awake()
     {
         healthSystem = GetComponent<HealthSystem>();
+        healthSystem.Initialize(objectiveData.baseLife);
         healthSystem.onTakeDamage += OnTakeDamage;
         healthSystem.onDie += OnDie;
     }

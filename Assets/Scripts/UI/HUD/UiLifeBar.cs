@@ -10,25 +10,27 @@ public class UiLifeBar : MonoBehaviour
     private void Awake()
     {
         // Suscripci�n a eventos del sistema de salud
-        target.onLifeUpdated += HealthSystem_onLifeUpdated;
-        target.onDie += HealthSystem_onDie;
+        target.onLifeUpdated += UpdateLifeBar;
+        target.onDie += EmptyLifeBar;
     }
 
     private void OnDestroy()
     {
         // Evita referencias colgantes al destruir el objeto
-        target.onLifeUpdated -= HealthSystem_onLifeUpdated;
-        target.onDie -= HealthSystem_onDie;
+        target.onLifeUpdated -= UpdateLifeBar;
+        target.onDie -= EmptyLifeBar;
     }
 
-    public void HealthSystem_onLifeUpdated(int current, int max)
+    public void UpdateLifeBar(int current, int max)
     {
         // Actualiza la barra de vida seg�n el porcentaje restante
         float lerp = current / (float)max;
         lifeBar.fillAmount = lerp;
+        //Debug.Log($"[UI] fillAmount set to {lifeBar.fillAmount}");
+        //Debug.Log($"[UI] Life updated: {current}/{max}");
     }
 
-    private void HealthSystem_onDie()
+    private void EmptyLifeBar()
     {
         // Vac�a la barra al morir el jugador
         lifeBar.fillAmount = 0;

@@ -8,19 +8,29 @@ public class HealthSystem : MonoBehaviour, IDamageable
     public event Action onTakeDamage;
     public event Action onDie;
 
-    public int maxLife = 100;
+    public int maxLife;
     private int currentLife;
     public bool isInvulnerable = false;
 
-    private void Awake()
+    //private void Awake()
+    //{
+    //    currentLife = maxLife;
+    //}
+
+    public void Initialize(int newMaxLife)
     {
+        maxLife = newMaxLife;
         currentLife = maxLife;
+        onLifeUpdated?.Invoke(currentLife, maxLife);
+        //Debug.Log("Health Initialize llamado", gameObject);
+        //Debug.Log($"[HealthSystem] Init life: {currentLife}/{maxLife}", gameObject);
+
     }
 
-    private void Start()
-    {
-        onLifeUpdated?.Invoke(currentLife, maxLife);
-    }
+    //private void Start()
+    //{
+    //    onLifeUpdated?.Invoke(currentLife, maxLife);
+    //}
 
     public void TakeDamage(int amount)
     {
@@ -45,6 +55,7 @@ public class HealthSystem : MonoBehaviour, IDamageable
         }
 
         Debug.Log("DoDamage", gameObject);
+        //Debug.Log($"[HealthSystem] currentLife after damage: {currentLife}", gameObject);
     }
 
     public void Heal(int plus)
@@ -64,4 +75,5 @@ public class HealthSystem : MonoBehaviour, IDamageable
         onLifeUpdated?.Invoke(currentLife, maxLife);
         Debug.Log("Curación aplicada");
     }
+
 }

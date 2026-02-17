@@ -6,11 +6,8 @@ public class EnemyChaser : EnemyBase
     private Rigidbody2D rb;
     private Transform objetive;
     private Transform currentTarget;
-
-    [Header("Damage")]
-    [SerializeField] private float attackInterval = 1f; //Tiempo entre golpes
-    [SerializeField] private float damageCooldown = 1f;
-    private float lastDamageTime;
+    
+    [SerializeField] private float damageCooldown = 1f; //Tiempo entre golpes
     private Coroutine attackCoroutine;
     private float nextCheckTime;
 
@@ -125,11 +122,10 @@ public class EnemyChaser : EnemyBase
 
     private IEnumerator AttackCoroutine(IDamageable damageable)
     {
-        while (damageable != null && Time.time > lastDamageTime + damageCooldown)
+        while (damageable != null)
         {
-            damageable.TakeDamage(10);
-            lastDamageTime = Time.time;
-            yield return new WaitForSeconds(attackInterval);
+            damageable.TakeDamage(currentDamage);
+            yield return new WaitForSeconds(damageCooldown);
         }
     }
 }

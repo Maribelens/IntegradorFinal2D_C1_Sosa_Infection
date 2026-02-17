@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e445da0ab8083c4287634fea0130e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 85d79ce7cdb1d8743bbbb72cedd7783b, type: 2}
   healthSystem: {fileID: 4218896342116345013}
   gameManager: {fileID: 0}
   moveSpeed: 5

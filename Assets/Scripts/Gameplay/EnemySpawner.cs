@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
             if (currentEnemiesAlive < maxEnemiesAlive)
             {
                 SpawnEnemy();
-                Debug.Log("Spawn Interval: " + currentSpawnInterval);
+                //Debug.Log("Spawn Interval: " + currentSpawnInterval);
 
             }
             yield return new WaitForSeconds(currentSpawnInterval);
