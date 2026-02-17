@@ -1458,6 +1458,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  infection01: 0
+  infectionStep: 0.05
+  infectionInterval: 2
+  infectionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &226099042
 GameObject:
   m_ObjectHideFlags: 0
@@ -8283,8 +8310,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd21d7f072b05947b6101ce6751f095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 221006675}
   enemyPrefab: {fileID: 1761104008415833918, guid: 22ac92a5527afcd4993ff1374a45ba0b, type: 3}
-  spawnInterval: 2
+  baseSpawnInterval: 2
+  minSpawnInterval: 0.5
   maxEnemiesAlive: 5
   spawnPoints:
   - {fileID: 1676030460}

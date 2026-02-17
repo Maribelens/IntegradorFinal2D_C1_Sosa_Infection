@@ -4,9 +4,16 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [Header("Scripts")]
+    [SerializeField] private GameManager gameManager;   //Asignar en el inspector
+
     [Header("Spawner Configuration")]
-    [SerializeField] private GameObject enemyPrefab; 
-    [SerializeField] private float spawnInterval = 2f;  //Tiempo entre spawns
+    [SerializeField] private GameObject enemyPrefab;
+
+    [SerializeField] private float baseSpawnInterval = 5f;
+    [SerializeField] private float minSpawnInterval = 2f;
+
+    private float currentSpawnInterval;  //Tiempo entre spawns
     [SerializeField] private int maxEnemiesAlive = 5;   //Maxima cantidad de enemigos vivos
     
     [Header("Spawn Area")]
@@ -14,9 +21,17 @@ public class EnemySpawner : MonoBehaviour
 
     private int currentEnemiesAlive = 0;
 
-    void Start()
+    private void OnEnable()
     {
-        StartCoroutine(SpawnRoutine());    
+        if (gameManager != null)
+            gameManager.OnInfectionChanged += HandleInfectionChanged;
+    }
+
+    private void Start()
+    {
+        currentSpawnInterval = baseSpawnInterval;
+        HandleInfectionChanged(gameManager.Infection01);
+        StartCoroutine(SpawnRoutine());
     }
 
     private IEnumerator SpawnRoutine()
@@ -26,9 +41,23 @@ public class EnemySpawner : MonoBehaviour
             if (currentEnemiesAlive < maxEnemiesAlive)
             {
                 SpawnEnemy();
+                Debug.Log("Spawn Interval: " + currentSpawnInterval);
+
             }
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(currentSpawnInterval);
         }
+    }
+
+    private void OnDisable()
+    {
+        if (gameManager != null)
+            gameManager.OnInfectionChanged -= HandleInfectionChanged;
+    }
+
+    private void HandleInfectionChanged(float infection01)
+    {
+        float evaluated = gameManager.InfectionEvaluated;
+        currentSpawnInterval = Mathf.Lerp(baseSpawnInterval, minSpawnInterval, evaluated);
     }
 
     private void SpawnEnemy()
@@ -40,6 +69,7 @@ public class EnemySpawner : MonoBehaviour
         currentEnemiesAlive++;
 
         EnemyBase enemyBase = newEnemy.GetComponent<EnemyBase>();
+        enemyBase.Initialize(gameManager);
         if (enemyBase != null)
         {
             enemyBase.OnEnemyDeath += HandleEnemyDeath;

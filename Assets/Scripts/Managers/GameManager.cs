@@ -1,59 +1,55 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //[SerializeField] private GameManager gameManager;
     public enum GameState { Playing, Paused, GameOver, Victory }
     [SerializeField] private GameState currentState;
+
+    [Header ("Infection values")]
     public GameState CurrentState => currentState;
 
+    [Range(0,1)]
+    [SerializeField] private float infection01 =0f; //visible en Inspector
+
+    [SerializeField] private float infectionStep = 0.05f;   //cuando sube cada tick
+    [SerializeField] private float infectionInterval = 2f;    //cada cuantos segundos sube 
+
+    public float Infection01 => infection01;
+    public float InfectionPercent => infection01 * 100f;
+
+    [Header("Infection Curve")]
+    [SerializeField] private AnimationCurve infectionCurve = AnimationCurve.Linear(0, 0, 1, 1);
+
+    public float InfectionEvaluated => infectionCurve.Evaluate(infection01);
+
     public event Action<GameState> OnStateChanged;
+    public event Action<float> OnInfectionChanged;
     public event Action OnGameOver;
     public event Action OnVictory;
-
-    //[Header("References")]
-    //[SerializeField] private HealthSystem health;
-    //[SerializeField] private UIPickables uiPickables;
-    //[SerializeField] private UIResultScreen resultsScreenUI;
-
-    //[Header("Pickables")]
-    //public int coins = 0;
-    //public int diamonds = 0;
-
-    //[Header("Audio")]
-    //[SerializeField] private AudioClip gameplayMusic;
-    //[SerializeField] private AudioClip gameOverMusic;
-    //[SerializeField] private AudioClip victoryMusic;
-    //[SerializeField] private AudioSource musicSource;
-    //[SerializeField] private AudioSource musicUISource;
 
     private void Start()
     {
         SetGameState(GameState.Playing);
+        StartCoroutine(InfectionRoutine());
     }
 
-    //private void Start()
-    //{
-    //Time.timeScale = 1;
-    //if (uiPickables == null) Debug.LogError("UiElements no asignado en GameManager");
-    //if (musicSource == null) Debug.LogError("AudioSource de gameplay no asignado");
+    private IEnumerator InfectionRoutine()
+    {
+        OnInfectionChanged?.Invoke(infection01);
 
-    //if (musicSource != null)
-    //{
-    //    musicSource.clip = gameplayMusic;
-    //    musicSource.Play();
-    //}
+        while (infection01 < 1f)
+        {
+            yield return new WaitForSeconds(infectionInterval);
 
-    //if (health != null)
-    //{
-    //    health.onInvulnerableStart += ActivateProtection;
-    //}
-    //}
+            infection01 += infectionStep;
+            infection01 = Mathf.Clamp01(infection01);
 
-    //private void OnDestroy()
-    //{
-    //    health.onInvulnerableStart -= ActivateProtection;
-    //}
+            OnInfectionChanged?.Invoke(infection01);
+        }
+    }
 
     public void SetGameState(GameState newState)
     {
@@ -107,42 +103,4 @@ public class GameManager : MonoBehaviour
     {
         SetGameState(GameState.Playing);
     }
-
-
-    //private void PlayMusic(AudioClip clip)
-    //{
-    //    // Cambia la música según el estado actual del juego
-    //    if (musicSource != null && clip != null)
-    //    {
-    //        musicSource.Stop();
-    //        musicUISource.clip = clip;
-    //        musicUISource.Play();
-    //    }
-    //}
-
-    //public void ActivateProtection()
-    //{
-    //    // Activa la invulnerabilidad temporal del jugador
-    //    if (health == null)
-    //    {
-    //        Debug.LogWarning("ActivateProtection: health es null");
-    //        return;
-    //    }
-    //    Debug.Log("Proteccion activada");
-    //    health.StartInvulnerability(7f);
-    //}
-
-    //public void AddCoins(int amount)
-    //{
-    //    coins += amount;
-    //    uiPickables.UpdateAmountCoins(coins);
-    //    Debug.Log("Monedas: " + coins);
-    //}
-
-    //public void AddDiamonds(int amount)
-    //{
-    //    diamonds += amount;
-    //    uiPickables.UpdateAmountDiamonds(diamonds);
-    //    Debug.Log("Diamantes: " + diamonds);
-    //}
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,8 +9,8 @@ public class EnemyChaser : EnemyBase
 
     [Header("Damage")]
     [SerializeField] private float attackInterval = 1f; //Tiempo entre golpes
-    //[SerializeField] private float damageCooldown = 1f;
-    //private float lastDamageTime;
+    [SerializeField] private float damageCooldown = 1f;
+    private float lastDamageTime;
     private Coroutine attackCoroutine;
     private float nextCheckTime;
 
@@ -21,16 +20,21 @@ public class EnemyChaser : EnemyBase
     [SerializeField] private float attackRangePlayer = 1.5f;
     [SerializeField] private bool preferObjective = true;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     protected override void Start()
     {
         base.Start();
-        rb = GetComponent<Rigidbody2D>();
         objetive = GameObject.FindGameObjectWithTag("Objetive")?.transform;
         currentTarget = player;
 
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (player == null && objetive == null) return;
 
@@ -45,7 +49,7 @@ public class EnemyChaser : EnemyBase
     {
         if (currentTarget == null) return;
         Vector2 direction = (currentTarget.position - transform.position).normalized;
-        rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + direction * baseSpeed * Time.fixedDeltaTime);
     }
 
     private void SelectTarget()
@@ -121,10 +125,10 @@ public class EnemyChaser : EnemyBase
 
     private IEnumerator AttackCoroutine(IDamageable damageable)
     {
-        while (damageable != null)
+        while (damageable != null && Time.time > lastDamageTime + damageCooldown)
         {
             damageable.TakeDamage(10);
-            //lastDamageTime = Time.time;
+            lastDamageTime = Time.time;
             yield return new WaitForSeconds(attackInterval);
         }
     }
