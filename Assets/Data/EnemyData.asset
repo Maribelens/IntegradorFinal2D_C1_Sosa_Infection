@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ed0440418eb8a4fb4b656cdaa73a6c, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
-  enemyName: Chaser
+  enemyName: Swarmers
   baseLife: 50
   baseSpeed: 2
   baseDamage: 10

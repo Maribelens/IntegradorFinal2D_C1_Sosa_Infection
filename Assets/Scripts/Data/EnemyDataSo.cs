@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyDataSo : ScriptableObject
 {
     [Header("Enemy Settings")]
-    public string enemyName = "Chaser";
+    public string enemyName = "Swarmers";
     public int baseLife = 50;
     public float baseSpeed = 2f;
     public int baseDamage = 10;

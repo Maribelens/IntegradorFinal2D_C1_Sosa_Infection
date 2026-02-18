@@ -197,10 +197,8 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 74577547471641444bce94393cbe2fe2, type: 2}
   healthSystem: {fileID: 8461385777123643384}
   gameManager: {fileID: 0}
-  damage: 10
   baseSpeed: 2
   maxSpeed: 5
-  attackInterval: 1
   damageCooldown: 1
   checkInterval: 0.5
   attackRangeObjective: 2
@@ -242,7 +240,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2, y: 0.75}
+  m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4501493654487674903
 CanvasRenderer:
@@ -432,7 +430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.13}
   m_SizeDelta: {x: 97.5, y: 99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8859414019833601807
@@ -470,7 +468,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2, y: 0.75}
+  m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8274220003677774451
 CanvasRenderer:
