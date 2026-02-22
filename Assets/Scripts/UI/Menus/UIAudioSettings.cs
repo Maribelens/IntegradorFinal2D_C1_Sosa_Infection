@@ -11,7 +11,7 @@ public class UIAudioSettings : MonoBehaviour
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
-    [SerializeField] private Slider uiSlider;
+    //[SerializeField] private Slider uiSlider;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class UIAudioSettings : MonoBehaviour
         masterSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
         musicSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
         sfxSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
-        uiSlider.onValueChanged.AddListener(OnUIVolumeChanged);
+        //uiSlider.onValueChanged.AddListener(OnUIVolumeChanged);
         if (PlayerPrefs.HasKey("musicVolume"))
         {
             LoadVolume();
@@ -50,12 +50,12 @@ public class UIAudioSettings : MonoBehaviour
         PlayerPrefs.SetFloat("sfxVolume", volume);
     }
 
-    private void OnUIVolumeChanged(float volume)
-    {
-        volume = uiSlider.value;
-        audioMixer.SetFloat("uiVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("uiVolume", volume);
-    }
+    //private void OnUIVolumeChanged(float volume)
+    //{
+    //    volume = uiSlider.value;
+    //    audioMixer.SetFloat("uiVolume", Mathf.Log10(volume) * 20);
+    //    PlayerPrefs.SetFloat("uiVolume", volume);
+    //}
 
     // --------------------- CARGA DE VOLUMENES GUARDADOS ---------------------
 

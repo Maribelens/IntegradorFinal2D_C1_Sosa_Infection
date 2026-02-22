@@ -13,7 +13,7 @@ public class UIPause : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] private Button btnContinue;
-    [SerializeField] private Button btnOptions;
+    [SerializeField] private Button btnSettings;
     [SerializeField] private Button btnExit;
     [SerializeField] private Button btnSettingsBack;
 
@@ -36,7 +36,7 @@ public class UIPause : MonoBehaviour
     {
         // Asigna las funciones a los botones del menú.
         btnContinue.onClick.AddListener(OnPlayClicked);
-        btnOptions.onClick.AddListener(OnOptionsClicked);
+        btnSettings.onClick.AddListener(OnOptionsClicked);
         btnExit.onClick.AddListener(OnExitClicked);
         btnSettingsBack.onClick.AddListener(OnSettingsBackClicked);
     }
@@ -100,7 +100,7 @@ public class UIPause : MonoBehaviour
     private void RemoveButtonsListeners()
     {
         btnContinue.onClick.RemoveAllListeners();
-        btnOptions.onClick.RemoveAllListeners();
+        btnSettings.onClick.RemoveAllListeners();
         btnExit.onClick.RemoveAllListeners();
         btnSettingsBack.onClick.RemoveAllListeners();
     }
