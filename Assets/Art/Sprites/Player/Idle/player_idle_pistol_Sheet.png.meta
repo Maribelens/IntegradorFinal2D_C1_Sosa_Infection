@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -228,7 +228,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player_idle_pistol_Sheet_0: 5041155483796693554
+      player_idle_pistol_Sheet_1: 6266729978499339467
+      player_idle_pistol_Sheet_2: -8365059398799705463
+      player_idle_pistol_Sheet_3: -1140944691517640674
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

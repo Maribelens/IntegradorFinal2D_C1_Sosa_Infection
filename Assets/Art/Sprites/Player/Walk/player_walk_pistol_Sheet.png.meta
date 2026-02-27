@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -276,7 +276,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player_walk_pistol_Sheet_0: -5588486730743404187
+      player_walk_pistol_Sheet_1: -2138128434689179693
+      player_walk_pistol_Sheet_2: -6961138415042485035
+      player_walk_pistol_Sheet_3: -8954244580439478225
+      player_walk_pistol_Sheet_4: -5250292994609586573
+      player_walk_pistol_Sheet_5: -503311432555976448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,7 +9,7 @@ public class PlayerAim : MonoBehaviour
         Vector2 direction = mousePos - transform.position;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
 }

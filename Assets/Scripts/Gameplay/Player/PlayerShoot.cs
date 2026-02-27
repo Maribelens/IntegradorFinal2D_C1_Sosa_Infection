@@ -1,0 +1,27 @@
+using UnityEngine;
+
+public class PlayerShoot : MonoBehaviour
+{
+    ////[Header("Player Data")]
+    ////[SerializeField] private PlayerDataSo playerData;
+
+    ////[SerializeField] Transform firePoint;     // punto desde donde se dispara
+    ////[SerializeField] GameObject bulletPrefab; // asigna el prefab de la bala
+    ////[SerializeField] float fireRate = 0.2f;   // intervalo entre disparos
+    ////private float nextFireTime = 0f;
+
+    //void Update()
+    //{
+    //    //// Disparo continuo mientras se mantiene presionado el botón
+    //    //if (Input.GetMouseButton(playerData.fireMouseButton) && Time.time >= nextFireTime)
+    //    //{
+    //    //    Shoot();
+    //    //    nextFireTime = Time.time + fireRate;
+    //    //}
+    //}
+
+    ////void Shoot()
+    ////{
+    ////    Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    ////}
+}
