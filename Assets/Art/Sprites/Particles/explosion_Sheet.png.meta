@@ -1,43 +1,25 @@
 fileFormatVersion: 2
-guid: 2da6183883c85c846baea4a874ae0b4b
+guid: 0927dd20719fa544d976e5ccd2878517
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5947105025562394841
-    second: playerBloodDeath_Sheet_0
+      213: 4274486965324747256
+    second: explosion_Sheet_0
   - first:
-      213: 370251403055599115
-    second: playerBloodDeath_Sheet_1
+      213: 7317516902648938203
+    second: explosion_Sheet_1
   - first:
-      213: 7356048125143703811
-    second: playerBloodDeath_Sheet_2
+      213: 2317056260985933040
+    second: explosion_Sheet_2
   - first:
-      213: -7033423119972540210
-    second: playerBloodDeath_Sheet_3
+      213: 546249813975485989
+    second: explosion_Sheet_3
   - first:
-      213: 3479351860518463861
-    second: playerBloodDeath_Sheet_4
+      213: 1172070673942716016
+    second: explosion_Sheet_4
   - first:
-      213: -2619669987491888260
-    second: playerBloodDeath_Sheet_5
-  - first:
-      213: 2735204532838437820
-    second: playerBloodDeath_Sheet_6
-  - first:
-      213: 7137217526779453129
-    second: playerBloodDeath_Sheet_7
-  - first:
-      213: -5778422795303901158
-    second: playerBloodDeath_Sheet_8
-  - first:
-      213: -7904590637499849433
-    second: playerBloodDeath_Sheet_9
-  - first:
-      213: 2070884484147112703
-    second: playerBloodDeath_Sheet_10
-  - first:
-      213: -9114306252234323708
-    second: playerBloodDeath_Sheet_11
+      213: 3008001631626177587
+    second: explosion_Sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -159,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerBloodDeath_Sheet_0
+      name: explosion_Sheet_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 11
-        width: 16
-        height: 13
+        x: 9
+        y: 8
+        width: 13
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72fb9650d73a77da0800000000000000
-      internalID: -5947105025562394841
+      spriteID: 8f1183d6f37025b30800000000000000
+      internalID: 4274486965324747256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerBloodDeath_Sheet_1
+      name: explosion_Sheet_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 14
-        width: 14
-        height: 17
+        x: 31
+        y: 0
+        width: 36
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,39 +176,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0e08bc70b5632500800000000000000
-      internalID: 370251403055599115
+      spriteID: bde7e446ada0d8560800000000000000
+      internalID: 7317516902648938203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerBloodDeath_Sheet_2
+      name: explosion_Sheet_2
       rect:
         serializedVersion: 2
-        x: 47
+        x: 66
+        y: 0
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fc49a0a466d72020800000000000000
+      internalID: 2317056260985933040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ec1a8cf4ba49700800000000000000
+      internalID: 546249813975485989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 97
         y: 20
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3016ed9bbcee51660800000000000000
-      internalID: 7356048125143703811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerBloodDeath_Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 24
         width: 6
         height: 6
       alignment: 0
@@ -236,19 +239,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec06403efe2446e90800000000000000
-      internalID: -7033423119972540210
+      spriteID: 07e120c6118044010800000000000000
+      internalID: 1172070673942716016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerBloodDeath_Sheet_4
+      name: explosion_Sheet_5
       rect:
         serializedVersion: 2
-        x: 56
+        x: 103
         y: 22
-        width: 8
+        width: 6
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -257,155 +260,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5792cce2514294030800000000000000
-      internalID: 3479351860518463861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerBloodDeath_Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 17
-        width: 12
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c734bc6a60015abd0800000000000000
-      internalID: -2619669987491888260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerBloodDeath_Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 0
-        width: 81
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb39fd7e70665f520800000000000000
-      internalID: 2735204532838437820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerBloodDeath_Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 2
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ce9168a68d7c0360800000000000000
-      internalID: 7137217526779453129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerBloodDeath_Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 1
-        width: 9
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1824e3451beecfa0800000000000000
-      internalID: -5778422795303901158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerBloodDeath_Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 11
-        width: 14
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72561fc02b04d4290800000000000000
-      internalID: -7904590637499849433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerBloodDeath_Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 6
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ffae47067724dbc10800000000000000
-      internalID: 2070884484147112703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerBloodDeath_Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 17
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4098375d0ca738180800000000000000
-      internalID: -9114306252234323708
+      spriteID: 33cafd00c819eb920800000000000000
+      internalID: 3008001631626177587
       vertices: []
       indices: 
       edges: []

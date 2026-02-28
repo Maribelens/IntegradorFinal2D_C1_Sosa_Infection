@@ -10301,6 +10301,22 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 8225458613342835912, guid: 6cf5db1cf0a78a14f9d8d8df7ab53beb, type: 3}
+    - target: {fileID: 6437259109065695028, guid: 7393603f4c1b1e84ea441b27fd495684, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 221006675}
+    - target: {fileID: 6437259109065695028, guid: 7393603f4c1b1e84ea441b27fd495684, type: 3}
+      propertyPath: effectPrefab
+      value: 
+      objectReference: {fileID: 5483593864371818277, guid: 5d4ad6d4373be9a46882a983817e0fb9, type: 3}
+    - target: {fileID: 6437259109065695028, guid: 7393603f4c1b1e84ea441b27fd495684, type: 3}
+      propertyPath: vfxDiePrefab
+      value: 
+      objectReference: {fileID: 280376885405023330, guid: 107f9ad19ef60cb4296ca335251bff96, type: 3}
+    - target: {fileID: 6437259109065695028, guid: 7393603f4c1b1e84ea441b27fd495684, type: 3}
+      propertyPath: vfxHurtPrefab
+      value: 
+      objectReference: {fileID: 5483593864371818277, guid: 5d4ad6d4373be9a46882a983817e0fb9, type: 3}
     - target: {fileID: 6563039317291090569, guid: 7393603f4c1b1e84ea441b27fd495684, type: 3}
       propertyPath: m_Name
       value: Player
@@ -10345,7 +10361,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2386045543415023973, guid: 7393603f4c1b1e84ea441b27fd495684, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

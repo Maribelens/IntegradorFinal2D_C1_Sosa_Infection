@@ -13,10 +13,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     // --------------------- COMPONENTES ---------------------
-    private float currentSpeed;
     private Rigidbody2D rb;
+    private float currentSpeed;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    [SerializeField] private GameObject vfxHurtPrefab;
+    [SerializeField] private GameObject vfxDiePrefab;
     [HideInInspector] public Vector2 movement;
 
     [Header("Dash Settings")]
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (!isDashing)
-            // 3. Aplicar movimiento con Rigidbody2D
+            //    //3.Aplicar movimiento con Rigidbody2D
             rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
     }
 
@@ -151,10 +153,12 @@ public class PlayerController : MonoBehaviour
         SwapStateTo(PlayerStates.Pain);
     }
 
-    public IEnumerator FlashDamage(Color newColor)
+    public IEnumerator HurtCoroutine(Color newColor)
     {
         spriteRenderer.color = newColor;
         yield return new WaitForSeconds(0.2f);
+        GameObject bloodSplash = Instantiate(vfxHurtPrefab, transform.position, Quaternion.identity);
+        Destroy(bloodSplash, 0.5f);
         spriteRenderer.color = originalColor;
     }
 
@@ -162,19 +166,23 @@ public class PlayerController : MonoBehaviour
     {
         SwapStateTo(PlayerStates.Die);
     }
-    
-    public void OnDeathAnimationEnd()
-    {
-        animator.SetTrigger("Die");
-        StartCoroutine(DieCoroutine());
-        // Este método será llamado automáticamente al final de la animación
-    }
 
     public IEnumerator DieCoroutine()
     {
+        GameObject bloodSplash = Instantiate(vfxDiePrefab, transform.position, Quaternion.identity);
+        Destroy(bloodSplash, 0.5f);
+        yield return new WaitForSeconds(1f);
         gameManager.GameOver();
         Debug.Log("PLAYER MURIÓ (animación finalizada)");
-        yield return new WaitForSeconds(1f);
+    }
+
+    public void OnDeathAnimationEnd()
+    {
+        animator.SetTrigger("Die");
+        //gameManager.GameOver();
+        //Debug.Log("PLAYER MURIÓ (animación finalizada)");
+        //StartCoroutine(DieCoroutine());
+        // Este método será llamado automáticamente al final de la animación
     }
 }
 

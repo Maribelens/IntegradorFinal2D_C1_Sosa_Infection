@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      microscope_0: -4428912374758282309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

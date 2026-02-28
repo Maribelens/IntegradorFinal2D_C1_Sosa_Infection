@@ -204,7 +204,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player_pain_rifle_Sheet_0: 462751916330700181
+      player_pain_rifle_Sheet_1: -4583691011117102010
+      player_pain_rifle_Sheet_2: 5422944451685105261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

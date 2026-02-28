@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 4e26c0c836777684681cf21089390be8
+guid: 3f852bc14bca11341828a3a4c8419aa8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8851657026087468145
-    second: playerBloodSplash_Sheet_0
-  - first:
-      213: 1543964446915192336
-    second: playerBloodSplash_Sheet_1
+      213: -7796615146771582766
+    second: bulletPuff_Sheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -80,7 +77,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -129,43 +126,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerBloodSplash_Sheet_0
+      name: bulletPuff_Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f83477635d8982580800000000000000
-      internalID: -8851657026087468145
+      spriteID: 98a8680f1d7d55d41a6992dea521e733
+      internalID: -860723541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerBloodSplash_Sheet_1
+      name: bulletPuff_Sheet_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 16
         y: 0
-        width: 9
-        height: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0166634fb734d6510800000000000000
-      internalID: 1543964446915192336
+      spriteID: af23552e87d61154798083ca031f7d3a
+      internalID: -409119135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulletPuff_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8698d717841d5f4a81215cb9c6b2a97
+      internalID: 228672194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulletPuff_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f959708b98920a45a24e5865b3ec5ee
+      internalID: 497031607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulletPuff_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80785d51f7ee4fa46a6494337646884a
+      internalID: -1356906930
       vertices: []
       indices: 
       edges: []
@@ -173,14 +233,19 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e1ffb8cbd779bea4d856a6d2c10fd327
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bulletPuff_Sheet_0: -860723541
+      bulletPuff_Sheet_1: -409119135
+      bulletPuff_Sheet_2: 228672194
+      bulletPuff_Sheet_3: 497031607
+      bulletPuff_Sheet_4: -1356906930
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

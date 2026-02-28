@@ -20,7 +20,7 @@ public class StateHurt : State
         startTime = Time.time;
 
         //Efecto visual de danio
-        playerController.StartCoroutine(playerController.FlashDamage(Color.red));
+        playerController.StartCoroutine(playerController.HurtCoroutine(Color.red));
     }
 
     public override void Update()

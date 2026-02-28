@@ -228,7 +228,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player_grenade_pistol_Sheet_0: 3907551957490733479
+      player_grenade_pistol_Sheet_1: -7951784945216056869
+      player_grenade_pistol_Sheet_2: 4059881988389638366
+      player_grenade_pistol_Sheet_3: 174783769915820677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

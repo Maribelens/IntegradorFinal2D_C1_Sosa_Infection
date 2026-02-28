@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerAim : MonoBehaviour
 {
-
     void Update()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -204,7 +204,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      grenade_Sheet_0: 5239587101207451353
+      grenade_Sheet_1: 3208783639725134044
+      grenade_Sheet_2: 7964931078020295537
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

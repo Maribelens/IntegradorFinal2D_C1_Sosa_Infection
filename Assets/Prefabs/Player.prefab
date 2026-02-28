@@ -43,11 +43,11 @@ GameObject:
   - component: {fileID: 8638556379480383421}
   - component: {fileID: 4820470988062500575}
   - component: {fileID: 4037358790273877479}
-  - component: {fileID: 2386045543415023973}
   - component: {fileID: 3280947997187444986}
   - component: {fileID: 4343645660055994234}
   - component: {fileID: 4218896342116345013}
   - component: {fileID: 4802141804820154040}
+  - component: {fileID: 6437259109065695028}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -189,29 +189,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &2386045543415023973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6563039317291090569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e445da0ab8083c4287634fea0130e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 85d79ce7cdb1d8743bbbb72cedd7783b, type: 2}
-  healthSystem: {fileID: 4218896342116345013}
-  gameManager: {fileID: 0}
-  movement: {x: 0, y: 0}
-  dashSpeed: 20
-  dashDuration: 0.2
-  dashCooldown: 1
-  isDashing: 0
-  firePoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  fireRate: 0.2
 --- !u!114 &3280947997187444986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,3 +249,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6437259109065695028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563039317291090569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65ead86a4f5ea84e95bc511492eff7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 85d79ce7cdb1d8743bbbb72cedd7783b, type: 2}
+  healthSystem: {fileID: 0}
+  gameManager: {fileID: 0}
+  movement: {x: 0, y: 0}
+  dashSpeed: 20
+  dashDuration: 0.2
+  dashCooldown: 1
+  isDashing: 0
+  canDash: 1
+  firePoint: {fileID: 1197586344576907936}
+  bulletPrefab: {fileID: 8225458613342835912, guid: 6cf5db1cf0a78a14f9d8d8df7ab53beb, type: 3}
+  fireRate: 0.2

@@ -180,7 +180,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      surgeryInstruments_0: 8019092448883032872
+      surgeryInstruments_1: 7281078099819169312
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

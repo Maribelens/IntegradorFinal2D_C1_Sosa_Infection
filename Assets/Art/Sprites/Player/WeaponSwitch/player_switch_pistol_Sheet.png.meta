@@ -204,7 +204,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player_switch_pistol_Sheet_0: 6552555762680000627
+      player_switch_pistol_Sheet_1: 1655970050091737812
+      player_switch_pistol_Sheet_2: -6232134005350237632
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

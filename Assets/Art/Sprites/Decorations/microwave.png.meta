@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      microwave_0: -4208126894944693974
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

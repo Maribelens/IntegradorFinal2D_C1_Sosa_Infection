@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cafeteria_broken_0: -1119065725685430161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

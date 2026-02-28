@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      glass_shattered_0: 3580272438806167682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

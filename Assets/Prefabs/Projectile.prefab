@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2346302928887187388, guid: 013925fb97b8dfc4fa4237c967145df3, type: 3}
   m_Color: {r: 1, g: 0.6331285, b: 0.3726415, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -168,3 +168,4 @@ MonoBehaviour:
   owner: 0
   speed: 10
   lifeTime: 2
+  effectPrefab: {fileID: 7630656664633707947, guid: 9d29a56e74d4c5241af333570735fd0b, type: 3}

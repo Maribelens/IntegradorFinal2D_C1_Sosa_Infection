@@ -1,13 +1,43 @@
 fileFormatVersion: 2
-guid: 0c4880c815ab232418339c495d71108c
+guid: 81ecfb84dd3d7da4dadae81c24cc21db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8198271702588251193
-    second: monsterBloodSplash_Sheet_0
+      213: -5431011949785298236
+    second: monsterBloodDeath_Sheet_0
   - first:
-      213: 5564107243728938286
-    second: monsterBloodSplash_Sheet_1
+      213: 4632941120388753808
+    second: monsterBloodDeath_Sheet_1
+  - first:
+      213: -7289107429262193820
+    second: monsterBloodDeath_Sheet_2
+  - first:
+      213: -5085319108285104864
+    second: monsterBloodDeath_Sheet_3
+  - first:
+      213: -4303969231302600532
+    second: monsterBloodDeath_Sheet_4
+  - first:
+      213: -5542712312045678916
+    second: monsterBloodDeath_Sheet_5
+  - first:
+      213: -4432919320979033139
+    second: monsterBloodDeath_Sheet_6
+  - first:
+      213: 8415634398606960494
+    second: monsterBloodDeath_Sheet_7
+  - first:
+      213: -6644958319045111395
+    second: monsterBloodDeath_Sheet_8
+  - first:
+      213: -5162397231164252194
+    second: monsterBloodDeath_Sheet_9
+  - first:
+      213: 7005678233669819808
+    second: monsterBloodDeath_Sheet_10
+  - first:
+      213: -1284517988354733793
+    second: monsterBloodDeath_Sheet_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,43 +159,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monsterBloodSplash_Sheet_0
+      name: monsterBloodDeath_Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 80
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7c32713a253e93e80800000000000000
-      internalID: -8198271702588251193
+      spriteID: e52545948b5a3aa4799ae297874a4c16
+      internalID: 1045262789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monsterBloodSplash_Sheet_1
+      name: monsterBloodDeath_Sheet_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 9
-        height: 8
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e2524aaee0ea73d40800000000000000
-      internalID: 5564107243728938286
+      spriteID: 70a7da2c1e792dc4683ea3648f693755
+      internalID: -255708132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monsterBloodDeath_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960a0ae286255294aaef5674dc9eb9f1
+      internalID: 299847002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monsterBloodDeath_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd5645b1f8dafab46a10d527fda6503b
+      internalID: 878660957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monsterBloodDeath_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e749532fa3c7cc041b4eddbb495d0d16
+      internalID: 1720145005
       vertices: []
       indices: 
       edges: []
@@ -173,14 +266,19 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d3e026babbe0c4742818a758e7a57b00
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      monsterBloodDeath_Sheet_0: 1045262789
+      monsterBloodDeath_Sheet_1: -255708132
+      monsterBloodDeath_Sheet_2: 299847002
+      monsterBloodDeath_Sheet_3: 878660957
+      monsterBloodDeath_Sheet_4: 1720145005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

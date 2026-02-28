@@ -199,6 +199,8 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   baseSpeed: 2
   maxSpeed: 5
+  vfxHurtrefab: {fileID: 6344483350631708641, guid: 445ca7f35cc67864bb49a32e4e6e1ab9, type: 3}
+  vfxDiePrefab: {fileID: 1701354809761239886, guid: 0a34f3a3bd5d5aa4f8118835514909a3, type: 3}
   damageCooldown: 1
   checkInterval: 0.5
   attackRangeObjective: 2

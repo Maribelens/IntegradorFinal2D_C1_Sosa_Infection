@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hospitalSurgeryBed_down_0: 8971936801843632106
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

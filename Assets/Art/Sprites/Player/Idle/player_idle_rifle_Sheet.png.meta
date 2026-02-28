@@ -228,7 +228,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player_idle_rifle_Sheet_0: -2558252941834197229
+      player_idle_rifle_Sheet_1: 7489975103924978928
+      player_idle_rifle_Sheet_2: -6658680074117883131
+      player_idle_rifle_Sheet_3: -7122593828387448919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

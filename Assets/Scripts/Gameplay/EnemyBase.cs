@@ -18,6 +18,9 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] private float maxSpeed = 5f;
     //[SerializeField] private float speedMultiplier = 0.05f;
     protected float currentSpeed;
+    [SerializeField] private GameObject vfxHurtrefab;
+    [SerializeField] private GameObject vfxDiePrefab;
+ 
 
     [Header ("References")]
     protected Transform player; //referencia al jugador
@@ -83,6 +86,8 @@ public abstract class EnemyBase : MonoBehaviour
     private IEnumerator FlashDamage()
     {
         spriteRenderer.color = Color.green;
+        GameObject bloodSplash = Instantiate(vfxHurtrefab, transform.position, Quaternion.identity);
+        Destroy(bloodSplash, 0.5f);
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = originalColor;
     }
@@ -90,6 +95,8 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void OnDie()
     {
         OnEnemyDeath?.Invoke(this);
+        GameObject bloodSplash = Instantiate(vfxDiePrefab, transform.position, Quaternion.identity);
+        Destroy(bloodSplash, 0.5f);
         Destroy(gameObject);
     }
 }

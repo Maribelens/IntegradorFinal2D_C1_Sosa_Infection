@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     public float speed = 10f;
     public float lifeTime = 2f; // tiempo antes de destruir la bala
     private Rigidbody2D rb;
+    [SerializeField] private GameObject effectPrefab;
 
     private void Awake()
     {
@@ -42,6 +43,8 @@ public class Bullet : MonoBehaviour
         {
             damageable.TakeDamage(playerCurrentDamage);
         }
+        GameObject bulletPuff = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+        Destroy(bulletPuff, 0.5f);
         Destroy(gameObject); // destruye la bala al chocar
     }
 }

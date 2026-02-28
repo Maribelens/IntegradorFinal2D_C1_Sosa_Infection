@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fridge_broken_0: 2332978623262730466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

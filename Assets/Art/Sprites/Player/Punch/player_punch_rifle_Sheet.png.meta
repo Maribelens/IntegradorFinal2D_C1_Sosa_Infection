@@ -228,7 +228,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player_punch_rifle_Sheet_0: 8158328500742044292
+      player_punch_rifle_Sheet_1: -5437273962311546544
+      player_punch_rifle_Sheet_2: 6436860440556890691
+      player_punch_rifle_Sheet_3: 8677095516259101493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
