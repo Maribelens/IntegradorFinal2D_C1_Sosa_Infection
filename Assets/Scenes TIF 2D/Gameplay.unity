@@ -6272,8 +6272,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98e9a83d6ca1ac4889083b4af5f08db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1003418846}
+  lifeTarget: {fileID: 1003418846}
   lifeBar: {fileID: 1120952064}
+  target: {fileID: 1003418843}
+  offset: {x: 0, y: 1, z: 0}
+  isWorldSpace: 0
 --- !u!1 &1195180675
 GameObject:
   m_ObjectHideFlags: 0
@@ -10361,6 +10364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8638556379480383421, guid: 7393603f4c1b1e84ea441b27fd495684, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5041155483796693554, guid: 262c47399c70d084c81a744c1fb6bd16, type: 3}
     m_RemovedComponents:
     - {fileID: 2386045543415023973, guid: 7393603f4c1b1e84ea441b27fd495684, type: 3}
     m_RemovedGameObjects: []
@@ -10379,10 +10386,6 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 221006675}
-    - target: {fileID: 1596955114740755193, guid: 5922daaecd470b149b302a2527e30e25, type: 3}
-      propertyPath: objectiveData
-      value: 
-      objectReference: {fileID: 11400000, guid: 1c2543a06ba31aa4b8795923f284bd27, type: 2}
     - target: {fileID: 1701479962437282706, guid: 5922daaecd470b149b302a2527e30e25, type: 3}
       propertyPath: m_Name
       value: Generator

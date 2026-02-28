@@ -4,21 +4,37 @@ using UnityEngine.UI;
 public class UiLifeBar : MonoBehaviour
 {
     [Header("LifeBar Panel")]
-    [SerializeField] private HealthSystem target;
+    [SerializeField] private HealthSystem lifeTarget;
     [SerializeField] private Image lifeBar;
+    [SerializeField] private Transform target;
+    [SerializeField] private Vector3 offset = new Vector3(0, 1f, 0);
+    [SerializeField] private bool isWorldSpace = true;
 
     private void Awake()
     {
         // Suscripci�n a eventos del sistema de salud
-        target.onLifeUpdated += UpdateLifeBar;
-        target.onDie += EmptyLifeBar;
+        lifeTarget.onLifeUpdated += UpdateLifeBar;
+        lifeTarget.onDie += EmptyLifeBar;
+    }
+
+    private void LateUpdate()
+    {
+        if (!isWorldSpace) return;
+
+        if (target == null) return;
+        transform.rotation = Quaternion.identity;
+        transform.position = target.position + offset;
     }
 
     private void OnDestroy()
     {
         // Evita referencias colgantes al destruir el objeto
-        target.onLifeUpdated -= UpdateLifeBar;
-        target.onDie -= EmptyLifeBar;
+        lifeTarget.onLifeUpdated -= UpdateLifeBar;
+        lifeTarget.onDie -= EmptyLifeBar;
+
+        // Si no se asignó en el inspector, buscar el target automáticamente
+        if (target == null && lifeTarget != null) 
+            target = lifeTarget.transform;
     }
 
     public void UpdateLifeBar(int current, int max)

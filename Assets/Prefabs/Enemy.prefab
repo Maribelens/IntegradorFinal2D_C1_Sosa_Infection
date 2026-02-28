@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5838448987162179606}
   - component: {fileID: 8461385777123643384}
   - component: {fileID: -2157411542956321646}
+  - component: {fileID: 2188872124437291785}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -80,8 +81,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.4292453, b: 0.4292453, a: 1}
+  m_Sprite: {fileID: -133165711469108904, guid: 87b08d7a5147a394f83e6996f0985ade, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -155,8 +156,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 3.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -206,6 +207,28 @@ MonoBehaviour:
   attackRangeObjective: 2
   attackRangePlayer: 1.5
   preferObjective: 1
+--- !u!95 &2188872124437291785
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761104008415833918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c926384fa1a66f408032253a9fbc394, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2238415981760288414
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.25}
+  m_AnchoredPosition: {x: 0, y: 1.21}
   m_SizeDelta: {x: 2, y: 0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &565667416210587868
@@ -397,8 +420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98e9a83d6ca1ac4889083b4af5f08db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 8461385777123643384}
+  lifeTarget: {fileID: 8461385777123643384}
   lifeBar: {fileID: 2742557224597233854}
+  target: {fileID: 2808273221024003020}
 --- !u!1 &4368417151165347646
 GameObject:
   m_ObjectHideFlags: 0

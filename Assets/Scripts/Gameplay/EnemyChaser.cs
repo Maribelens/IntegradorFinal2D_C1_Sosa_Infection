@@ -1,11 +1,14 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class EnemyChaser : EnemyBase
 {
     private Rigidbody2D rb;
     private Transform objetive;
     private Transform currentTarget;
+    //[SerializeField] private Transform corner;
     
     [SerializeField] private float damageCooldown = 1f; //Tiempo entre golpes
     private Coroutine attackCoroutine;
@@ -47,6 +50,8 @@ public class EnemyChaser : EnemyBase
         if (currentTarget == null) return;
         Vector2 direction = (currentTarget.position - transform.position).normalized;
         rb.MovePosition(rb.position + direction * baseSpeed * Time.fixedDeltaTime);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void SelectTarget()
@@ -94,7 +99,7 @@ public class EnemyChaser : EnemyBase
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Solo aplicar daño si colisiona con el target actual
+        // Solo aplicar daño si colisiona con el lifeTarget actual
         Debug.Log("Colisión con: " + collision.collider.name);
 
         if (collision.transform != currentTarget) return;

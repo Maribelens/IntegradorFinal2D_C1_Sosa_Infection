@@ -32,13 +32,14 @@ public abstract class EnemyBase : MonoBehaviour
     {
         gameManager = gm;
     }
+
     protected virtual void Awake()
     {
         currentDamage = enemyData.baseDamage;
         currentSpeed = enemyData.baseSpeed;
 
-        gameManager = GetComponent<GameManager>();
-        healthSystem = GetComponent<HealthSystem>();
+        //gameManager = GetComponent<GameManager>();
+        //healthSystem = GetComponent<HealthSystem>();
 
         //Configurar la vida maxima del HeealthSystem segun el SO
         healthSystem.Initialize(enemyData.baseLife);
