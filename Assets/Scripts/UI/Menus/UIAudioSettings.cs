@@ -4,66 +4,34 @@ using UnityEngine.UI;
 
 public class UIAudioSettings : MonoBehaviour
 {
-    [Header("Mixer")]
-    [SerializeField] private AudioMixer audioMixer;
-
-    [Header("Sliders")]
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
-    //[SerializeField] private Slider uiSlider;
+
+    [SerializeField] AudioMixer masterMixer;
 
     private void Awake()
     {
-
-        masterSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
-        musicSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
-        sfxSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
-        //uiSlider.onValueChanged.AddListener(OnUIVolumeChanged);
-        if (PlayerPrefs.HasKey("musicVolume"))
-        {
-            LoadVolume();
-        }
+        masterSlider.onValueChanged.AddListener(delegate { SetVolume("masterVolume", masterSlider.value); });
+        musicSlider.onValueChanged.AddListener(delegate { SetVolume("musicVolume", musicSlider.value); });
+        sfxSlider.onValueChanged.AddListener(delegate { SetVolume("sfxVolume", sfxSlider.value); });
     }
 
-    // --------------------- AJUSTE DE VOLUMENES ---------------------
-    // Actualiza el volumen general en el mixer y se guarda el valor.
-
-    private void OnMasterVolumeChanged(float volume)
+    private void SetVolume(string parameterName, float _value)
     {
-        volume = masterSlider.value;
-        audioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("masterVolume", volume);
+        if (_value < 1) _value = 0.001f;
+
+        PlayerPrefs.SetFloat(parameterName, _value);
+
+        //Conversion a decibelios
+        masterMixer.SetFloat(parameterName, Mathf.Log10(_value / 100) * 20f);
     }
 
-    private void OnMusicVolumeChanged(float volume)
+    private void Start()
     {
-        volume = musicSlider.value;
-        audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("musicVolume", volume);
-    }
-
-    private void OnSFXVolumeChanged(float volume)
-    {
-        volume = sfxSlider.value;
-        audioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("sfxVolume", volume);
-    }
-
-    //private void OnUIVolumeChanged(float volume)
-    //{
-    //    volume = uiSlider.value;
-    //    audioMixer.SetFloat("uiVolume", Mathf.Log10(volume) * 20);
-    //    PlayerPrefs.SetFloat("uiVolume", volume);
-    //}
-
-    // --------------------- CARGA DE VOLUMENES GUARDADOS ---------------------
-
-    private void LoadVolume()
-    {
-        masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
-        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
+        SetVolume("masterVolume", PlayerPrefs.GetFloat("masterVolume", 100f));
+        SetVolume("musicVolume", PlayerPrefs.GetFloat("masterVolume", 100f));
+        SetVolume("sfxVolume", PlayerPrefs.GetFloat("masterVolume", 100f));
     }
 
     private void OnDestroy()

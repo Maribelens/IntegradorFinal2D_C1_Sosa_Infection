@@ -20,15 +20,21 @@ public class EnemyChaser : EnemyBase
     [SerializeField] private float attackRangePlayer = 1.5f;
     [SerializeField] private bool preferObjective = true;
 
+    [Header("Audio Settings")]
+    public AudioSource audioSource;
+    public AudioClip chaserAppearSFX;
+
     protected override void Awake()
     {
         base.Awake();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected override void Start()
     {
         base.Start();
+        audioSource.PlayOneShot(chaserAppearSFX);
         objetive = GameObject.FindGameObjectWithTag("Objetive")?.transform;
         currentTarget = player;
 
@@ -132,5 +138,10 @@ public class EnemyChaser : EnemyBase
             damageable.TakeDamage(currentDamage);
             yield return new WaitForSeconds(damageCooldown);
         }
+    }
+
+    protected override void OnDie()
+    {
+        base.OnDie();
     }
 }

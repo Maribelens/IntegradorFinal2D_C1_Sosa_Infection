@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class UIResultScreen : MonoBehaviour
 {
-    //[Header("Audio")]
-    //[SerializeField] private AudioSource sfxSourceUI;
+    [Header("Audio")]
+    [SerializeField] private AudioSource sfxSourceUI;
 
     [Header("Game Over panel")]
     [SerializeField] private CanvasGroup gameoverPanel;
@@ -23,16 +23,16 @@ public class UIResultScreen : MonoBehaviour
 
     private void Awake()
     {
-        //sfxSourceUI = GetComponent<AudioSource>();
+        sfxSourceUI = GetComponent<AudioSource>();
         SetCanvasGroup(gameoverPanel, false);
         SetCanvasGroup(victoryPanel, false);
         AddButtonsListeners();
     }
 
-    //private void Start()
-    //{
-    //    sfxSourceUI.loop = false;
-    //}
+    private void Start()
+    {
+        sfxSourceUI.loop = false;
+    }
 
     private void OnEnable()
     {

@@ -48,12 +48,14 @@ public class UIPause : MonoBehaviour
         SetStateCanvasGroup(panelMainPause, isPause);
         if (isPause)
         {
-            gameManager.SetGameState(GameManager.GameState.Paused);
+            gameManager.Pause();
+            //gameManager.SetGameState(GameManager.GameState.Paused);
             Time.timeScale = 0f;
         }
         else
         {
-            gameManager.SetGameState(GameManager.GameState.Playing);
+            gameManager.Resume();
+            //gameManager.SetGameState(GameManager.GameState.Playing);
             Time.timeScale = 1f;
         }
     }

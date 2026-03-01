@@ -14,6 +14,9 @@ public class StateShoot : State
     public override void OnEnter()
     {
         Debug.Log($"Entro en {state}");
+
+        playerController.audioSource.PlayOneShot(playerController.shootClipSFX);
+
         playerController.ChangeAnimatorState((int)state);
         nextFireTime = Time.time;
 

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class StateHurt : State
 {
+
     private float hurtDuration = 0.5f;  //tiempo que dura el estado de dolor
     private float startTime;
 
@@ -14,6 +15,9 @@ public class StateHurt : State
     public override void OnEnter()
     {
         base.OnEnter();
+
+        playerController.audioSource.PlayOneShot(playerController.hurtClipSFX);
+
         playerController.ChangeAnimatorState((int)state);
 
         //Guarda el tiempo de inicio

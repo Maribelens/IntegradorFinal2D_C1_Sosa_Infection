@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,9 +16,17 @@ public class PlayerController : MonoBehaviour
     private float currentSpeed;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+
     [SerializeField] private GameObject vfxHurtPrefab;
     [SerializeField] private GameObject vfxDiePrefab;
     [HideInInspector] public Vector2 movement;
+
+    [Header("Audio Settings")]
+    public AudioSource audioSource;
+    public AudioClip dashClipSFX;
+    public AudioClip shootClipSFX;
+    public AudioClip hurtClipSFX;
+    public AudioClip deadClipSFX;
 
     [Header("Dash Settings")]
     public float dashSpeed = 20f;
@@ -52,6 +59,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
+        audioSource = GetComponent<AudioSource>();
 
         //Configurar velocidad y la vida maxima del HeealthSystem segun el SO
         currentSpeed = playerData.baseSpeed;
@@ -76,8 +84,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (currentState != null)
-            currentState.Update();
+        if (gameManager.CurrentState == GameManager.GameState.Playing)
+        {
+            if (currentState != null)
+                currentState.Update();
+        }
     }
 
     private void FixedUpdate()
@@ -170,7 +181,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator DieCoroutine()
     {
         GameObject bloodSplash = Instantiate(vfxDiePrefab, transform.position, Quaternion.identity);
-        Destroy(bloodSplash, 0.5f);
+        Destroy(bloodSplash);
         yield return new WaitForSeconds(1f);
         gameManager.GameOver();
         Debug.Log("PLAYER MURIÓ (animación finalizada)");

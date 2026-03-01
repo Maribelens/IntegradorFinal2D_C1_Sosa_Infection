@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
     [Header("Infection Curve")]
     [SerializeField] private AnimationCurve infectionCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip gameOverSound;
+    [SerializeField] private AudioClip victorySound;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource sfxSource;
+
     public float InfectionEvaluated => infectionCurve.Evaluate(infection01);
 
     public event Action<GameState> OnStateChanged;
@@ -51,7 +57,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetGameState(GameState newState)
+    private void PlayMusic(AudioClip clip)
+    {
+        // Cambia la música según el estado actual del juego
+        if (musicSource != null && clip != null)
+        {
+            musicSource.Stop();
+            sfxSource.clip = clip;
+            sfxSource.Play();
+        }
+    }
+
+    private void SetGameState(GameState newState)
     {
         if (currentState == newState) return;
         currentState = newState;
@@ -71,13 +88,11 @@ public class GameManager : MonoBehaviour
 
             case GameState.GameOver:
                 Time.timeScale = 0;
-                //PlayMusic(gameOverMusic);
                 OnGameOver?.Invoke();
                 break;
 
             case GameState.Victory:
                 Time.timeScale = 0;
-                //PlayMusic(victoryMusic);
                 OnVictory?.Invoke();
                 break;
         }
@@ -87,11 +102,13 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         SetGameState(GameState.GameOver);
+        PlayMusic(gameOverSound);
     }
 
     public void Victory()
     {
         SetGameState(GameState.Victory);
+        PlayMusic(victorySound);
     }
 
     public void Pause()

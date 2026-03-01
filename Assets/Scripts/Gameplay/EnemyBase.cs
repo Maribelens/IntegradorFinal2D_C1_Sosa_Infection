@@ -20,9 +20,9 @@ public abstract class EnemyBase : MonoBehaviour
     protected float currentSpeed;
     [SerializeField] private GameObject vfxHurtrefab;
     [SerializeField] private GameObject vfxDiePrefab;
- 
 
-    [Header ("References")]
+
+    [Header("References")]
     protected Transform player; //referencia al jugador
 
     private SpriteRenderer spriteRenderer;
@@ -69,8 +69,8 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void OnDisable()
     {
-        if(gameManager != null)
-        gameManager.OnInfectionChanged -= HandleInfectionChanged;
+        if (gameManager != null)
+            gameManager.OnInfectionChanged -= HandleInfectionChanged;
     }
 
     private void HandleInfectionChanged(float infection01)

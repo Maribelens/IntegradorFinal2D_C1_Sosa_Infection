@@ -15,6 +15,8 @@ public class StateDie : State
     public override void OnEnter()
     {
         base.OnEnter();
+
+        playerController.audioSource.PlayOneShot(playerController.deadClipSFX);
         playerController.ChangeAnimatorState((int)state);
 
         //Guarda el tiempo de inicio

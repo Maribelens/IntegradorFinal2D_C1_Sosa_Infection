@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class StateDash : State
 {
@@ -12,6 +13,8 @@ public class StateDash : State
     public override void OnEnter()
     {
         Debug.Log($"Entro de {state}");
+
+        playerController.audioSource.PlayOneShot(playerController.dashClipSFX);
         playerController.ChangeAnimatorState((int)state);
         playerController.StartCoroutine(playerController.Dash(playerController.movement));
     }

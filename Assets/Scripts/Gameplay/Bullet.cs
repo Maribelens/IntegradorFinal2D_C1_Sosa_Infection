@@ -4,6 +4,9 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo playerData;
     private int playerCurrentDamage;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootImpactSFX;
     public enum DamageOwner
     {
         Player,
@@ -20,6 +23,7 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         playerCurrentDamage = playerData.baseDamage;
     }
 
@@ -43,6 +47,7 @@ public class Bullet : MonoBehaviour
         {
             damageable.TakeDamage(playerCurrentDamage);
         }
+        audioSource.PlayOneShot(shootImpactSFX);
         GameObject bulletPuff = Instantiate(effectPrefab, transform.position, Quaternion.identity);
         Destroy(bulletPuff, 0.5f);
         Destroy(gameObject); // destruye la bala al chocar
