@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,15 +17,21 @@ public class UIChangeScene : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioSource menuMusicSource;
+
     public void Awake()
+    {
+        AddButtonsListeners();
+
+        menuMusicSource.clip = menuMusic;
+        menuMusicSource.Play();
+    }
+
+    private void AddButtonsListeners()
     {
         playButton.onClick.AddListener(OnPlayClicked);
         creditsButton.onClick.AddListener(OnCreditsClicked);
         creditsBackButton.onClick.AddListener(OnCreditsBackClicked);
         exitButton.onClick.AddListener(OnExitClicked);
-
-        menuMusicSource.clip = menuMusic;
-        menuMusicSource.Play();
     }
 
     private void OnPlayClicked()

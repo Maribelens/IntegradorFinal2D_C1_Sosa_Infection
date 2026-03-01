@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UiButtonFx : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] private UiSoundManager uiSoundManager;
+
     [Header("Buttons")]
     [SerializeField] private Button button;
 
@@ -34,12 +36,14 @@ public class UiButtonFx : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private void OnButtonClicked()
     {
+        uiSoundManager.PlayClick();
         Debug.Log("OnButtonClicked", gameObject);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("OnPointerEnter", gameObject);
+        uiSoundManager.PlayHover();
 
         if (expanding != null)   //entonces Expanding() esta corriendo
             StopCoroutine(expanding);

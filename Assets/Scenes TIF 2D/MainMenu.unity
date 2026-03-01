@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4271b0978cd6ce8448a38fcca4abc236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSoundManager: {fileID: 294750939}
   button: {fileID: 108856309}
   hoverScale: 1.2
   animDuration: 0.5
@@ -652,6 +653,7 @@ GameObject:
   - component: {fileID: 294750933}
   - component: {fileID: 294750937}
   - component: {fileID: 294750938}
+  - component: {fileID: 294750939}
   m_Layer: 5
   m_Name: UIcanvas
   m_TagString: Untagged
@@ -752,7 +754,7 @@ AudioSource:
   m_GameObject: {fileID: 294750932}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 6606854181353427971, guid: 85608477418d7be4eb73bcc73b169cb1, type: 2}
+  OutputAudioMixerGroup: {fileID: -9024314426363541114, guid: 111b93d8dac84d0468801d7341b45a2c, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -859,6 +861,21 @@ MonoBehaviour:
   creditsBackButton: {fileID: 108856309}
   menuMusic: {fileID: 8300000, guid: 2c8415864b6c16045806b1478f935bc3, type: 3}
   menuMusicSource: {fileID: 294750937}
+--- !u!114 &294750939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294750932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a63df37cb835f4dae74b0b95de5c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 294750937}
+  clickSound: {fileID: 8300000, guid: 9b1dc6e9f79042944b72efb09a76ebfe, type: 3}
+  hoverSound: {fileID: 8300000, guid: af6e38d4b0b32ed47a8aac4dda21b861, type: 3}
 --- !u!1 &328595282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4271b0978cd6ce8448a38fcca4abc236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSoundManager: {fileID: 294750939}
   button: {fileID: 367197890}
   hoverScale: 1.2
   animDuration: 0.5
@@ -1793,6 +1811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4271b0978cd6ce8448a38fcca4abc236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSoundManager: {fileID: 294750939}
   button: {fileID: 478114488}
   hoverScale: 1.2
   animDuration: 0.5
@@ -2352,6 +2371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4271b0978cd6ce8448a38fcca4abc236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSoundManager: {fileID: 294750939}
   button: {fileID: 1585622201}
   hoverScale: 1.2
   animDuration: 0.5

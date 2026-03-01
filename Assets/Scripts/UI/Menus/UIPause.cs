@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class UIPause : MonoBehaviour
 {
-    [Header("Game Manager")]
+    [Header("Managers")]
     [SerializeField] private GameManager gameManager;
+
 
     [Header("Panels")]
     [SerializeField] private CanvasGroup panelMainPause;
