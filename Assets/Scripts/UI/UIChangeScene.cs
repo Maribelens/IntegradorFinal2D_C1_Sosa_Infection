@@ -36,6 +36,7 @@ public class UIChangeScene : MonoBehaviour
 
     private void OnPlayClicked()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 
