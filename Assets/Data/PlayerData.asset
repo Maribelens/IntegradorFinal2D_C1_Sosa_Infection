@@ -16,3 +16,9 @@ MonoBehaviour:
   baseLife: 100
   baseSpeed: 5
   baseDamage: 10
+  keyCodeLeft: 97
+  keyCodeRight: 100
+  keyCodeUp: 119
+  keyCodeDown: 115
+  keyCodeDash: 32
+  fireMouseButton: 0
