@@ -16,9 +16,9 @@ TagManager:
   - UI
   - Enemy
   - PlayerBullet
-  - EnemyBullet
+  - Ground
   - Objetive
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -43,4 +43,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: border
+    uniqueID: 3455253237
+    locked: 0
+  - name: ground
+    uniqueID: 3319415699
+    locked: 0
+  - name: characters
+    uniqueID: 3348985657
     locked: 0

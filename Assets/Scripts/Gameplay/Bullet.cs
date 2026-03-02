@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     //[SerializeField] private int damage = 10;
 
     public float speed = 10f;
-    public float lifeTime = 2f; // tiempo antes de destruir la bala
+    public float lifeTime = 0.5f; // tiempo antes de destruir la bala
     private Rigidbody2D rb;
     [SerializeField] private GameObject effectPrefab;
 

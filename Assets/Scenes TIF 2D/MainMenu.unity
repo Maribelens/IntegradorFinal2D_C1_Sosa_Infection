@@ -859,7 +859,7 @@ MonoBehaviour:
   exitButton: {fileID: 1585622201}
   panelCredits: {fileID: 130397750}
   creditsBackButton: {fileID: 108856309}
-  menuMusic: {fileID: 8300000, guid: 2c8415864b6c16045806b1478f935bc3, type: 3}
+  menuMusic: {fileID: 8300000, guid: 4d6afdadea551624897b9e23099b6b8a, type: 3}
   menuMusicSource: {fileID: 294750937}
 --- !u!114 &294750939
 MonoBehaviour:
