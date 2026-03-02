@@ -47,3 +47,9 @@ Some visual and audio assets were obtained from:
 - Pixabay (royalty-free resources)
 Game Design and Programming
 MB-Lens
+
+Enlaces
+🎮 Jugar en Itch.io: --> https://mb-lens.itch.io/biocontain-field-ops
+⚙️ Builds
+🪟 Windows Build: disponible en Itch.io
+Versión de Unity: 2023.2.22f1
