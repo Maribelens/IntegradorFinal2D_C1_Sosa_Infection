@@ -116,7 +116,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &2867076443296105135
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 85d79ce7cdb1d8743bbbb72cedd7783b, type: 2}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 6244005908554092032}
   shootImpactSFX: {fileID: 0}
   owner: 0
   speed: 10

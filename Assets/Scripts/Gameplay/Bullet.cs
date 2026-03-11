@@ -42,10 +42,12 @@ public class Bullet : MonoBehaviour
     {
         // Aquí puedes manejar daño o efectos
         IDamageable damageable = collision.collider.GetComponent<IDamageable>();
-        if (damageable == null) return;
-        if (owner == DamageOwner.Player && collision.collider.CompareTag("Enemy"))
+        if (damageable != null)
         {
-            damageable.TakeDamage(playerCurrentDamage);
+            if (owner == DamageOwner.Player && collision.collider.CompareTag("Enemy"))
+            {
+                damageable.TakeDamage(playerCurrentDamage);
+            }
         }
         audioSource.PlayOneShot(shootImpactSFX);
         GameObject bulletPuff = Instantiate(effectPrefab, transform.position, Quaternion.identity);
